@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.random.mapper.GlobalLockMapper">
+
+	<insert id="insertSelectiveWithTest" useGeneratedKeys="true"
+		keyProperty="id"
+		parameterType="com.random.model.GlobalLock">
+		insert into `global_lock` (`id`,
+		`lock_key`, `create_time` )
+		select #{id,jdbcType=INTEGER}, #{lockKey,jdbcType=VARCHAR},
+		#{createTime,jdbcType=TIMESTAMP}
+		from dual where not exists
+		(select 1 from global_lock where lock_key = #{lockKey,jdbcType=VARCHAR})
+	</insert>
+	
+	<delete id="deleteByPrimaryKey">
+	
+		delete from global_lock where id = #{id,jdbcType=INTEGER}
+	</delete>
+	
+	<delete id="deleteByLockKey">
+	
+		delete from global_lock where lock_key = #{lockKey,jdbcType=VARCHAR}
+	</delete>
+	
+	<select id="selectByLockKey" parameterType="java.lang.String" resultType="com.random.model.GlobalLock">
+		select * from global_lock where lock_key = #{lockKey,jdbcType=VARCHAR}
+	
+	</select>
+	
+</mapper>

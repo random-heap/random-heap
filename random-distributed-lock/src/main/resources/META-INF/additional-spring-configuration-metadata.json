@@ -1,0 +1,142 @@
+{"properties": [
+  {
+    "name": "spring.datasource.druid.driver-class-name",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.driver-class-name'"
+  },
+  {
+    "name": "spring.datasource.druid.url",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.url'"
+  },
+  {
+    "name": "spring.datasource.druid.username",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.username'"
+  },
+  {
+    "name": "spring.datasource.druid.password",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.password'"
+  },
+  {
+    "name": "spring.datasource.druid.initialSize",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.initialSize'"
+  },
+  {
+    "name": "spring.datasource.druid.minIdle",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.minIdle'"
+  },
+  {
+    "name": "spring.datasource.druid.maxActive",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.maxActive'"
+  },
+  {
+    "name": "spring.datasource.druid.timeBetweenEvictionRunsMillis",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.timeBetweenEvictionRunsMillis'"
+  },
+  {
+    "name": "spring.datasource.druid.filters",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.filters'"
+  },
+  {
+    "name": "spring.datasource.druid.connectionProperties",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.connectionProperties'"
+  },
+  {
+    "name": "spring.datasource.druid.connectionProperties",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.connectionProperties'"
+  },
+  {
+    "name": "spring.datasource.druid.connectionProperties",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.connectionProperties'"
+  },
+  {
+    "name": "spring.datasource.druid.connectionProperties",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.connectionProperties'"
+  },
+  {
+    "name": "spring.datasource.druid.connectionProperties",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.connectionProperties'"
+  },
+  {
+    "name": "mybatis-plus.mapperLocations",
+    "type": "java.lang.String",
+    "description": "A description for 'mybatis-plus.mapperLocations'"
+  },
+  {
+    "name": "mybatis-plus.type-aliases-package",
+    "type": "java.lang.String",
+    "description": "A description for 'mybatis-plus.type-aliases-package'"
+  },
+  {
+    "name": "mybatis-plus.check-config-location",
+    "type": "java.lang.String",
+    "description": "A description for 'mybatis-plus.check-config-location'"
+  },
+  {
+    "name": "mybatis-plus.executor-type",
+    "type": "java.lang.String",
+    "description": "A description for 'mybatis-plus.executor-type'"
+  },
+  {
+    "name": "mybatis-plus.configuration.map-underscore-to-camel-case",
+    "type": "java.lang.String",
+    "description": "A description for 'mybatis-plus.configuration.map-underscore-to-camel-case'"
+  },
+  {
+    "name": "mybatis-plus.configuration.jdbc-type-for-null",
+    "type": "java.lang.String",
+    "description": "A description for 'mybatis-plus.configuration.jdbc-type-for-null'"
+  },
+  {
+    "name": "mybatis-plus.global-config.column-underline",
+    "type": "java.lang.String",
+    "description": "A description for 'mybatis-plus.global-config.column-underline'"
+  },
+  {
+    "name": "spring.datasource.druid.minEvictableIdleTimeMillis",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.minEvictableIdleTimeMillis'"
+  },
+  {
+    "name": "spring.datasource.druid.validationQuery",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.validationQuery'"
+  },
+  {
+    "name": "spring.datasource.druid.testWhileIdle",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.testWhileIdle'"
+  },
+  {
+    "name": "spring.datasource.druid.testOnBorrow",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.testOnBorrow'"
+  },
+  {
+    "name": "spring.datasource.druid.testOnReturn",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.testOnReturn'"
+  },
+  {
+    "name": "spring.datasource.druid.poolPreparedStatements",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.poolPreparedStatements'"
+  },
+  {
+    "name": "spring.datasource.druid.maxPoolPreparedStatementPerConnectionSize",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.druid.maxPoolPreparedStatementPerConnectionSize'"
+  }
+]}

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 日志级别从低到高分为TRACE < DEBUG < INFO < WARN < ERROR < FATAL，如果设置为WARN，则低于WARN的信息都不会输出 -->
+<!-- scan:当此属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true -->
+<!-- scanPeriod:设置监测配置文件是否有修改的时间间隔，如果没有给出时间单位，默认单位是毫秒。当scan为true时，此属性生效。默认的时间间隔为1分钟。 -->
+<!-- debug:当此属性设置为true时，将打印出logback内部日志信息，实时查看logback运行状态。默认值为false。 -->
+<configuration scan="true" scanPeriod="10 seconds">
+
+	<!--<include resource="org/springframework/boot/logging/logback/base.xml" 
+		/> -->
+
+	<contextName>logback</contextName>
+	<!-- name的值是变量的名称，value的值时变量定义的值。通过定义的值会被插入到logger上下文中。定义变量后，可以使“${}”来使用变量。 -->
+	<property name="log.path" value="/data0/java/random-order/logs" />
+
+	<!-- 彩色日志 -->
+	<!-- 彩色日志依赖的渲染类 -->
+	<conversionRule conversionWord="clr"
+		converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+	<conversionRule conversionWord="wex"
+		converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+	<conversionRule conversionWord="wEx"
+		converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+	<!-- 彩色日志格式 -->
+	<property name="CONSOLE_LOG_PATTERN"
+		value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+
+	<!--输出到控制台 -->
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<!--此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息 -->
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>debug</level>
+		</filter>
+		<encoder>
+			<Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+			<!-- 设置字符集 -->
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+
+	<!-- 按照每天生成日志文件 -->
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<Prudent>true</Prudent>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!--日志文件输出的文件名 -->
+			<FileNamePattern>${log.path}/%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+			<MaxFileSize>100MB</MaxFileSize>
+			<!--日志文件保留天数 -->
+			<MaxHistory>180</MaxHistory>
+		</rollingPolicy>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符 -->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{50} - %msg%n</pattern>
+			<charset>UTF-8</charset> <!-- 此处设置字符集 -->
+		</encoder>
+		<!--日志文件最大的大小 -->
+	</appender>
+
+	<logger name="com.random" level="INFO" />
+
+	<logger name="java.sql" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="druid.sql" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="org.mongodb" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="org.apache.zookeeper" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="io.netty" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="com.alibaba" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="org.apache.activemq" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="org.redisson" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="org.springframework" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="io.undertow" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="org.mybatis" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="org.apache" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="org.quartz" level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="FILE" />
+	</root>
+
+</configuration>
